@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from mylib.constant import EXTENSIONS, TOKEN
+from mylib.constant import EXTENSIONS, TOKEN, GUILD_ID
 
 
 class MyBot(commands.Bot):
@@ -13,6 +13,7 @@ class MyBot(commands.Bot):
     async def setup_hook(self):
         for extension in EXTENSIONS:
             await self.load_extension(extension)
+        await self.tree.sync(guild=discord.Object(id=GUILD_ID))
 
 
 if __name__ == "__main__":
