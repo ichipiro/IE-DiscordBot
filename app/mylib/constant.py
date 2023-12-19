@@ -3,8 +3,8 @@ from dotenv import load_dotenv
 
 
 load_dotenv()
-EXTENTIONS = [
-    # extentions here
+EXTENSIONS = [
+    # extensions here
     "cogs.ping",
     "cogs.reminder",
 ]
